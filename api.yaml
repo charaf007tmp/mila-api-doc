@@ -1,0 +1,13 @@
+openapi: 3.0.0
+info:
+  title: Example API
+  version: 1.0.0
+  description: API documentation for my backend project
+
+paths:
+  /users:
+    get:
+      summary: Get all users
+      responses:
+        '200':
+          description: A list of users
