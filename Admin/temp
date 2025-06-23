@@ -1,0 +1,87 @@
+[
+  [
+    {
+      "title": "AI Conference 2025",
+      "short_description": "A brief overview of the future of AI.",
+      "description": "This event will cover AI ethics, trends, and tools shaping 2025.",
+      "image_url": "https://example.com/event-image.jpg",
+      "classname": "AI-Tech-Conf",
+      "event_link": "https://example.com/register",
+      "event_date": "2025-07-15T10:00:00Z",
+      "institute": "Technical sciences",
+      "category": "University Library",
+      "display_event": true
+    },
+    {
+      "event_id": "01JYCBHRF8JWAAX11VMJA1VFXM",
+      "title": "AI Conference 2025",
+      "short_description": "A brief overview of the future of AI.",
+      "description": "This event will cover AI ethics, trends, and tools shaping 2025.",
+      "image_url": "https://example.com/event-image.jpg",
+      "classname": "AI-Tech-Conf",
+      "event_link": "https://example.com/register",
+      "event_date": "2025-07-15T10:00:00Z",
+      "institute": "Technical sciences",
+      "category": "University Library"
+    },
+    {
+      "id": "01JYCBHRF8JWAAX11VMJA1VFXM",
+      "message": "Event has been deleted successfully",
+      "status": "success"
+    },
+    {
+      "TeacherID": "01JYCFZQ7WTGF68R0KRFKG6S22",
+      "message": "Teacher added successfully",
+      "status": "success"
+    },
+    {
+      "teacher_name": "Ali",
+      "teacher_lname": "Al-Mutairi",
+      "teacher_email": "ali.mutairi@example.com"
+    },
+    {
+      "teacher_id": "01JYCFZQ7WTGF68R0KRFKG6S22",
+      "teacher_name": "Ali",
+      "teacher_lname": "Al-Mutairi",
+      "teacher_email": "ali.mutairi@example.com"
+    },
+    {
+      "id": "01JYCFZQ7WTGF68R0KRFKG6S22",
+      "message": "Event has been deleted successfully",
+      "status": "success"
+    },
+    {
+      "event_id": "01JYCD4EK7YA47GPB1W5ZAVF4D",
+      "title": "AI Conference 2025",
+      "short_description": "A brief overview of the future of AI.",
+      "image_url": "https://example.com/event-image.jpg"
+    },
+    {
+      "data": {
+        "event_ids": "01JYCBR5D9Y5ZASS4J8ZJC15EH",
+        "updated_count": 26
+      },
+      "message": "Events updated successfully",
+      "status": "success"
+    },
+    {
+      "event_ids": "01JYCBR5D9Y5ZASS4J8ZJC15EH"
+    },
+    {
+      "event_id": "01JYCD4EK7YA47GPB1W5ZAVF4D",
+      "title": "AI Conference 2025",
+      "short_description": "A brief overview of the future of AI.",
+      "image_url": "https://example.com/event-image.jpg"
+    },
+    {
+      "id": "01JYCD4EK7YA47GPB1W5ZAVF4D",
+      "message": "Event has been deleted successfully",
+      "status": "success"
+    }
+  ],
+  {
+    "status": "invalid",
+    "message": "Event not found",
+    "problem": "err"
+  }
+]

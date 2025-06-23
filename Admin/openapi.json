@@ -1,0 +1,453 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Welcome the the Admin api center",
+    "description": "made by charaf",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/events": {
+      "post": {
+        "tags": ["Events"],
+        "summary": "Add a new event",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "short_description": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  },
+                  "classname": {
+                    "type": "string"
+                  },
+                  "event_link": {
+                    "type": "string"
+                  },
+                  "event_date": {
+                    "type": "string"
+                  },
+                  "institute": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "categdisplay_eventory": {
+                    "type": "Boolen"
+                  }
+                },
+                "required": [
+                  "title",
+                  "short_description",
+                  "description",
+                  "image_url",
+                  "classname",
+                  "event_link",
+                  "event_date",
+                  "institute",
+                  "category",
+                  "categdisplay_eventory"
+                ]
+              },
+              "example": {
+                "title": "AI Conference 2025",
+                "short_description": "A brief overview of the future of AI.",
+                "description": "This event will cover AI ethics, trends, and tools shaping 2025.",
+                "image_url": "https://example.com/event-image.jpg",
+                "classname": "AI-Tech-Conf",
+                "event_link": "https://example.com/register",
+                "event_date": "2025-07-15T10:00:00Z",
+                "institute": "Technical sciences",
+                "category": "University Library",
+                "display_event": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Event created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "success",
+                  "message": "Event added successfully"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Error creating a new event",
+                  "problem": "Error msg"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/events/{EventsID}": {
+      "delete": {
+        "tags": ["Events"],
+        "summary": "Delete an event",
+        "responses": {
+          "200": {
+            "description": "Event deleted successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": "01JYCBHRF8JWAAX11VMJA1VFXM",
+                  "message": "Event has been deleted successfully",
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Event not found",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/teachers": {
+      "post": {
+        "tags": ["Teachers"],
+        "summary": "Add a new teacher",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "teacher_name": {
+                    "type": "string"
+                  },
+                  "teacher_lname": {
+                    "type": "string"
+                  },
+                  "teacher_email": {
+                    "type": "string",
+                    "format": "email"
+                  }
+                },
+                "required": ["teacher_name", "teacher_lname", "teacher_email"]
+              },
+              "example": {
+                "teacher_name": "Ali",
+                "teacher_lname": "Al-Mutairi",
+                "teacher_email": "ali.mutairi@example.com"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Teacher created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "TeacherID": "01JYCFZQ7WTGF68R0KRFKG6S22",
+                  "message": "Teacher added successfully",
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Error creating teacher",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Teachers"],
+        "summary": "Add a new teacher",
+        "responses": {
+          "200": {
+            "description": "Teacher created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "teacher_id": "01JYCFZQ7WTGF68R0KRFKG6S22",
+                  "teacher_name": "Ali",
+                  "teacher_lname": "Al-Mutairi",
+                  "teacher_email": "ali.mutairi@example.com"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Failed to retrieve Teachers",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/teachers/{TeachersID}": {
+      "delete": {
+        "tags": ["Teachers"],
+        "summary": "Add a new teacher",
+        "responses": {
+          "201": {
+            "description": "Teacher created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": "01JYCFZQ7WTGF68R0KRFKG6S22",
+                  "message": "Event has been deleted successfully",
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Teacher not found",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/eventsDisplay": {
+      "post": {
+        "tags": ["Display Events"],
+        "summary": "Add an event to display",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "event_id": {
+                    "type": "string"
+                  }
+                },
+                "required": "event_id"
+              },
+              "example": {
+                "event_ids": "01JYCBR5D9Y5ZASS4J8ZJC15EH"
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Event added to display successfully",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "message": "Events updated successfully",
+                    "status": "success",
+                    "event_ids": "01JYCBR5D9Y5ZASS4J8ZJC15EH"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "status": "invalid",
+                    "message": "Failed to update events",
+                    "problem": "err"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": ["Display Events"],
+          "summary": "Get displayed events",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "event_id": "01JYCD4EK7YA47GPB1W5ZAVF4D",
+                    "title": "AI Conference 2025",
+                    "short_description": "A brief overview of the future of AI.",
+                    "image_url": "https://example.com/event-image.jpg"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "status": "invalid",
+                    "message": "Failed to retrieve events",
+                    "problem": "err"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": ["Display Events"],
+          "summary": "Get displayed events",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "success": true,
+                    "data": [
+                      {
+                        "event_id": "28d1b7e5-3f2e-11f0-b283-8c47be25572d",
+                        "title": "Jazz Festival",
+                        "short_description": "Weekend of live jazz performances",
+                        "image_url": "https://example.com/images/jazz-fest.jpg",
+                        "display_order": 1
+                      },
+                      {
+                        "event_id": "39e2c8f6-4g3f-22g1-c394-9d58cf36683e",
+                        "title": "Art Exhibition",
+                        "short_description": "Modern art showcase",
+                        "image_url": "https://example.com/images/art-exhibit.jpg",
+                        "display_order": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "success": false,
+                    "error": {
+                      "code": "NO_EVENTS_DISPLAYED",
+                      "message": "No events are currently being displayed"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Display Events"],
+        "summary": "Get Display Events",
+        "responses": {
+          "200": {
+            "description": "Teacher created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "event_id": "01JYCD4EK7YA47GPB1W5ZAVF4D",
+                  "title": "AI Conference 2025",
+                  "short_description": "A brief overview of the future of AI.",
+                  "image_url": "https://example.com/event-image.jpg"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Failed to update events",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/eventsDisplay/{DEeventID}": {
+      "delete": {
+        "tags": ["Display Events"],
+        "summary": "Delete an event",
+        "responses": {
+          "200": {
+            "description": "Event deleted successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": "01JYCD4EK7YA47GPB1W5ZAVF4D",
+                  "message": "Event has been deleted successfully",
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Event not found",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

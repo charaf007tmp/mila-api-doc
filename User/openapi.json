@@ -1,0 +1,158 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Welcome the the Admin api center",
+    "description": "made by charaf",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/user/events": {
+      "get": {
+        "tags": ["Events"],
+        "summary": "Add a new teacher",
+        "responses": {
+          "200": {
+            "description": "Teacher created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "teacher_id": "01JYCFZQ7WTGF68R0KRFKG6S22",
+                  "teacher_name": "Ali",
+                  "teacher_lname": "Al-Mutairi",
+                  "teacher_email": "ali.mutairi@example.com"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Failed to retrieve Teachers",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/teachers": {
+      "get": {
+        "tags": ["Teachers"],
+        "summary": "Add a new teacher",
+        "responses": {
+          "200": {
+            "description": "Teacher created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "teacher_id": "01JYCFZQ7WTGF68R0KRFKG6S22",
+                  "teacher_name": "Ali",
+                  "teacher_lname": "Al-Mutairi",
+                  "teacher_email": "ali.mutairi@example.com"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Failed to retrieve Teachers",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/eventContent/{EventID}": {
+      "get": {
+        "tags": ["Event Content"],
+        "summary": "Search on event's",
+        "responses": {
+          "202": {
+            "description": "Teacher created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Search results have been fetched successfully",
+                  "search": {
+                    "category": "University Library",
+                    "classname": "AI-Tech-Conf",
+                    "description": "This event will cover AI ethics, trends, and tools shaping 2025.",
+                    "event_date": "2025-07-15T10:00:00Z",
+                    "event_link": "https://example.com/register",
+                    "image_url": "https://example.com/event-image.jpg",
+                    "institute": "Technical sciences",
+                    "title": "AI Conference 2025"
+                  },
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Article not found",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/search/{Value}": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search on event's",
+        "responses": {
+          "202": {
+            "description": "Teacher created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Search results have been fetched successfully",
+                  "search": [
+                    {
+                      "class": "AI-Tech-Conf",
+                      "id": "01JYCBHRF8JWAAX11VMJA1VFXM",
+                      "image_url": "https://example.com/event-image.jpg",
+                      "score": 0.7202408259401378,
+                      "short_description": "A brief overview of the future of AI.",
+                      "title": "AI Conference 2025"
+                    }
+                  ],
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "invalid",
+                  "message": "Failed to search",
+                  "problem": "err"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

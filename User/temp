@@ -1,0 +1,37 @@
+[
+  [
+    {
+      "message": "Search results have been fetched successfully",
+      "search": [
+        {
+          "class": "AI-Tech-Conf",
+          "id": "01JYCBHRF8JWAAX11VMJA1VFXM",
+          "image_url": "https://example.com/event-image.jpg",
+          "score": 0.7202408259401378,
+          "short_description": "A brief overview of the future of AI.",
+          "title": "AI Conference 2025"
+        }
+      ],
+      "status": "success"
+    },
+    {
+      "message": "Search results have been fetched successfully",
+      "search": {
+        "category": "University Library",
+        "classname": "AI-Tech-Conf",
+        "description": "This event will cover AI ethics, trends, and tools shaping 2025.",
+        "event_date": "2025-07-15T10:00:00Z",
+        "event_link": "https://example.com/register",
+        "image_url": "https://example.com/event-image.jpg",
+        "institute": "Technical sciences",
+        "title": "AI Conference 2025"
+      },
+      "status": "success"
+    }
+  ],
+  {
+    "status": "invalid",
+    "message": "Failed to search",
+    "problem": "err"
+  }
+]
